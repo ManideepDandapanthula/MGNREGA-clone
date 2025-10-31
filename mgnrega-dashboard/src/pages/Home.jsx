@@ -20,7 +20,7 @@ export default function Home() {
 
   async function fetchStates() {
     try {
-      const res = await axios.get("http://localhost:5000/api/states");
+      const res = await axios.get("https://mgnrega-backend-ibqi.onrender.com/api/states");
       setStates(res.data);
     } catch (err) {
       console.error("Error fetching states:", err);
@@ -31,7 +31,7 @@ export default function Home() {
     try {
       setLoading(true);
       const res = await axios.get(
-        `http://localhost:5000/api/mgnrega?state_name=${selectedState}&fin_year=2024-2025&limit=100`
+        `https://mgnrega-backend-ibqi.onrender.com/api/mgnrega?state_name=${selectedState}&fin_year=2024-2025&limit=100`
       );
       const data = res.data.records || [];
 
